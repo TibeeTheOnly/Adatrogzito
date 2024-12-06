@@ -1,0 +1,71 @@
+﻿<Window x:Class="Adatrogzito.ListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ListWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Név -->
+        <TextBlock Text="Név:" Grid.Row="0" Grid.Column="0"
+           VerticalAlignment="Center" Margin="0,0,10,0"/>
+        <TextBlock x:Name="NameTextBox" Grid.Row="0" Grid.Column="1" Width="200"/>
+
+        <!-- Kor -->
+        <TextBlock Text="Kor:" Grid.Row="1" Grid.Column="0"
+           VerticalAlignment="Center" Margin="0,0,10,0"/>
+        <TextBlock x:Name="AgeTextBox" Grid.Row="1" Grid.Column="1" Width="200"/>
+
+        <!-- Telefonszám -->
+        <TextBlock Text="Telefonszám:" Grid.Row="2" Grid.Column="0"
+           VerticalAlignment="Center" Margin="0,0,10,0"/>
+        <TextBlock x:Name="TelephoneTextBox" Grid.Row="2" Grid.Column="1" Width="200"/>
+
+        <!-- Cím -->
+        <TextBlock Text="Cím:" Grid.Row="3" Grid.Column="0"
+           VerticalAlignment="Center" Margin="0,0,10,0"/>
+        <TextBlock x:Name="AddressTextBox" Grid.Row="3" Grid.Column="1" Width="200"/>
+
+        <!-- E-mail cím -->
+        <TextBlock Text="E-mail cím:" Grid.Row="4" Grid.Column="0"
+           VerticalAlignment="Center" Margin="0,0,10,0"/>
+        <TextBlock x:Name="EmailTextBox" Grid.Row="4" Grid.Column="1" Width="200"/>
+
+        <!-- Nem -->
+        <TextBlock Text="Nem:" Grid.Row="5" Grid.Column="0"/>
+        <TextBlock x:Name="GenderTextBlock" Grid.Row="5" Grid.Column="1"/>
+        
+        <!-- Megjegyzés -->
+        <TextBlock Text="Megjegyzés:" Grid.Row="6" Grid.Column="0"
+           VerticalAlignment="Center" Margin="0,0,10,0"/>
+        <TextBlock x:Name="CommentTextBox" Grid.Row="6" Grid.Column="1" Width="200"/>
+
+        <!-- Gombok -->
+        <Button x:Name="RegisterButton" Content="Adat Hozzáadása" Grid.Row="7" Grid.ColumnSpan="2"
+        Click="RegisterButton_Click" Margin="0,10,0,0"
+        Width="150" HorizontalAlignment="Center" />
+        <Button x:Name="Frissítés" Content="Frissítés" Grid.Row="8" Grid.ColumnSpan="2" 
+                Margin="0,10,0,0" Width="150" HorizontalAlignment="Center" Click="RefreshClick"/>
+
+
+        <ListBox x:Name="NamesListBox" SelectionChanged="NamesListBox_SelectionChanged" Grid.Column="3" Grid.RowSpan="9">
+
+        </ListBox>
+        <TextBlock x:Name="SelectedNameTextBlock" Margin="10,150,10,10" FontSize="16"/>
+
+    </Grid>
+</Window>
