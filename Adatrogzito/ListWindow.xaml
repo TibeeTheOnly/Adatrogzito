@@ -62,7 +62,7 @@
                 Margin="0,10,0,0" Width="150" HorizontalAlignment="Center" Click="RefreshClick"/>
 
 
-        <ListBox x:Name="NamesListBox" SelectionChanged="NamesListBox_SelectionChanged" Grid.Column="3" Grid.RowSpan="9">
+        <ListBox x:Name="NamesListBox" SelectionChanged="NamesListBox_SelectionChanged" Grid.Column="3" Grid.RowSpan="9" PreviewMouseRightButtonDown="OnDeleteClick">
 
         </ListBox>
         <TextBlock x:Name="SelectedNameTextBlock" Margin="10,150,10,10" FontSize="16"/>

@@ -73,5 +73,30 @@ namespace Adatrogzito
             mainWindow.Show();
             this.Close();
         }
+
+        private void OnDeleteClick(object sender, MouseButtonEventArgs e)
+        {
+            if (NamesListBox.SelectedItem != null)
+            {
+                MessageBoxResult result = MessageBox.Show("Biztos szeretnéd törölni ezt a személyt a nyilvántartásól?", "Confirm Delete", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    string selectedName = NamesListBox.SelectedItem.ToString();
+                    string[] lines = File.ReadAllLines("users.txt");
+                    using (StreamWriter sw = new StreamWriter("users.txt"))
+                    {
+                        foreach (string line in lines)
+                        {
+                            string name = line.Split(',')[0];
+                            if (name != selectedName)
+                            {
+                                sw.WriteLine(line);
+                            }
+                        }
+                    }
+                    NamesListBox.Items.Remove(selectedName);
+                }
+            }
+        }
     }
 }

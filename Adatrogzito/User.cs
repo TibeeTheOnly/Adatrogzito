@@ -8,7 +8,7 @@ namespace Adatrogzito
 {
     internal class User
     {
-        public User(string name, int age, int phoneNumber, string address, string email, string gender , string comment)
+        public User(string name, int age, string phoneNumber, string address, string email, string gender , string comment)
         {
             Name = name;
             Age = age;
@@ -21,7 +21,7 @@ namespace Adatrogzito
 
         public string Name { get; set; }
         public int Age { get; set; }
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
         public string Gender { get; set; }
@@ -35,7 +35,7 @@ namespace Adatrogzito
         public static User FromString(string userData)
         {
             var parts = userData.Split(",");
-            return new User(parts[0], int.Parse(parts[1]), int.Parse(parts[2]), parts[3], parts[4], parts[5], parts[6]);
+            return new User(parts[0], int.Parse(parts[1]), parts[2], parts[3], parts[4], parts[5], parts[6]);
 
         }
     }
